@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import Rating, {RatingValueType} from "./Rating/Rating";
 import UnControlledAccordion from "./UnControlledAccordion/UnControlledAccordion";
-import {OnOff} from "./OnOff/OnOff";
-import {UnControlledRating} from "./UnControlledRating/UnControlledRating";
-import {Accordion} from "./SelfControlledAccordion/Accordion";
-import {ControlledOnOff} from "./ControlledOnOff/ControlledOnOff";
+import {UncontrolledOnOff} from "./UncontrolledOnOff/UncontrolledOnOff";
+import {UncontrolledRating} from "./UnControlledRating/UncontrolledRating";
+import {Accordion} from "./Accordion/Accordion";
+import {ControlledOnOff} from "./OnOff/OnOff";
 
 
 function App() {
@@ -19,10 +19,10 @@ function App() {
     <div className={"App"}>
 
 
-        <OnOff onChange={(value) => {setSwitchOn(!switchOn)}}/>
+        <UncontrolledOnOff onChange={(value) => {setSwitchOn(!switchOn)}}/>
         <ControlledOnOff value={switchOn}
                          onChange={ (value) => {setSwitchOn(!switchOn)}}/>
-        <UnControlledRating  />
+        <UncontrolledRating  />
         <Rating value={ratingValue} onClick={setRatingValue}/>
         <UnControlledAccordion titleValue={"Menu"} />
         <Accordion titleValue={"Menu"}

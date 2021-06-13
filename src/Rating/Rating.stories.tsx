@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import { Story, Meta } from '@storybook/react';
 import Rating, {RatingValueType} from "./Rating";
-import {RatingPropsType} from "../UnControlledRating/UnControlledRating";
+
 
 
 export default {

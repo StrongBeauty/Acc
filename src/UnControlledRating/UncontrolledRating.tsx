@@ -6,7 +6,7 @@ export type RatingPropsType = {
 
 }
 
-export function UnControlledRating(props: RatingPropsType) {
+export function UncontrolledRating(props: RatingPropsType) {
     //console.log("Rating rendering")
 
     let [value, setValue] = useState(0)
