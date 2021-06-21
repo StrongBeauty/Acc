@@ -16,6 +16,7 @@ export default {
     const Users = React.memo(UsersSecret)
 
 export const Example1 = () => {
+    console.log('Example1')
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['D', 'V', 'A', "10"])
     const addUser = () => {
@@ -29,4 +30,21 @@ export const Example1 = () => {
         <NewMessagesCounter count={counter} />
         <Users users={users}/>
         </>
+}
+
+export const HelpsForReactMemoExample = () => {
+    console.log('Example1')
+    const [counter, setCounter] = useState(0)
+    const [users, setUsers] = useState(['D', 'V', 'A', "10"])
+    const addUser = () => {
+        const newUsers = [...users, 'S' + new Date().getTime()]
+        setUsers(newUsers)
+    }
+
+    return <>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={addUser}>add user</button>
+        <NewMessagesCounter count={counter} />
+        <Users users={users}/>
+    </>
 }
