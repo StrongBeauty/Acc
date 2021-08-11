@@ -2,11 +2,11 @@
 
 import {useState} from "react";
 
-export type RatingPropsType = {
+export type UnControlledRatingPropsType = {
 
 }
 
-export function UncontrolledRating(props: RatingPropsType) {
+export function UnControlledRating(props: UnControlledRatingPropsType) {
     //console.log("Rating rendering")
 
     let [value, setValue] = useState(0)

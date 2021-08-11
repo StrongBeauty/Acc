@@ -1,35 +1,50 @@
 import React, {useState} from 'react';
 import './App.css';
-import Rating, {RatingValueType} from "./Rating/Rating";
-import UnControlledAccordion from "./UnControlledAccordion/UnControlledAccordion";
-import {UncontrolledOnOff} from "./UncontrolledOnOff/UncontrolledOnOff";
-import {UncontrolledRating} from "./UnControlledRating/UncontrolledRating";
-import {Accordion} from "./Accordion/Accordion";
-import {ControlledOnOff} from "./OnOff/OnOff";
+import Rating, {RatingPropsType, RatingValueType} from "./Rating/Rating";
+import {UnControlledOnOff, UnControlledOnOffPropsType} from "./UnControlledOnOff/UnControlledOnOff";
+import {Accordion, AccordionPropsType} from "./Accordion/Accordion";
+import {OnOff, OnOffPropsType} from "./OnOff/OnOff";
+import {UnControlledAccordion, UnControlledAccordionPropsType} from "./UnControlledAccordion/UnControlledAccordion";
+import {UnControlledRating, UnControlledRatingPropsType} from "./UnControlledRating/UnControlledRating";
 
 
-function App() {
-  console.log("App rendering")
+type AppPropsType = {
+    UnControlledOnOff: UnControlledOnOffPropsType
+    OnOff: OnOffPropsType
+    UnControlledRating: UnControlledRatingPropsType
+    Rating: RatingPropsType
+    UnControlledAccordion: UnControlledAccordionPropsType
+    Accordion: AccordionPropsType
+}
+
+function App(props: AppPropsType) {
+    console.log("App rendering")
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [switchOn, setSwitchOn] = useState<boolean>(true)
 
-        return (
-    <div className={"App"}>
+    return (
+        <div className={"App"}>
 
 
-        <UncontrolledOnOff onChange={(value) => {setSwitchOn(!switchOn)}}/>
-        <ControlledOnOff value={switchOn}
-                         onChange={ (value) => {setSwitchOn(!switchOn)}}/>
-        <UncontrolledRating  />
-        <Rating value={ratingValue} onClick={setRatingValue}/>
-        <UnControlledAccordion titleValue={"Menu"} />
-        <Accordion titleValue={"Menu"}
-                   collapsed={accordionCollapsed}
-                   onClick= {() => {setAccordionCollapsed(!accordionCollapsed)}}/>
-    </div>
-  )
+            <UnControlledOnOff onChange={(value) => {
+                setSwitchOn(!switchOn)
+            }}/>
+            <OnOff value={switchOn}
+                   onChange={(value) => {
+                       setSwitchOn(!switchOn)
+                   }}/>
+            <UnControlledRating/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UnControlledAccordion titleValue={"Menu"}/>
+            <Accordion titleValue={"Menu"}
+                       collapsed={accordionCollapsed}
+                       onClick={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }}/>
+        </div>
+    )
 }
 
 type PageTitlePropsType = {
@@ -37,7 +52,8 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log ("PageTitle rendering")
+    console.log("PageTitle rendering")
     return <h1>{props.title}</h1>
 }
+
 export default App;

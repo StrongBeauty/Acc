@@ -4,7 +4,7 @@ type ItemType = {
     value: any
 }
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
     onChange: () => void
@@ -42,7 +42,7 @@ export function Accordion(props: AccordionPropsType) {
         )
 } */
 
-type AccordionTitlePropsType = {
+export type AccordionTitlePropsType = {
     title: string
     onChange: () => void
 }

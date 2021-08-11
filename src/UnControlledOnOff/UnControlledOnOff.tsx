@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
-type PropsType = {
+export type UnControlledOnOffPropsType = {
     onChange: (on:boolean) => void
 }
 
-export function UncontrolledOnOff (props: PropsType) {
+export function UnControlledOnOff (props: UnControlledOnOffPropsType) {
 
         let [on, setOn] = useState(false) // hook with unit value
 

@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import { Story, Meta } from '@storybook/react';
-import {ControlledOnOff, OnOffPropsType} from "../OnOff/OnOff";
 import {action} from "@storybook/addon-actions";
 import {Accordion} from ".//Accordion";
 
